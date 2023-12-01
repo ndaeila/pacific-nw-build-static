@@ -1,0 +1,15 @@
+(function() {
+    document.addEventListener("DOMContentLoaded", function() {
+        // DOM is fully loaded
+
+        // Mobile Hamburger Menu Toggle
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+
+        if (menuToggle && navList) {
+            menuToggle.addEventListener('click', function() {
+                navList.classList.toggle('active');
+            });
+        }
+    });
+})();

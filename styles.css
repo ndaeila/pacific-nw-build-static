@@ -1,0 +1,225 @@
+html { 
+    max-width: 100%;
+    overflow-x: hidden; 
+    scroll-behavior: smooth;
+}
+
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    max-width: 100%;
+    overflow-x: hidden; 
+}
+
+body {
+    background-color: #FFFFFF;
+    color: #1e2527;
+    font-size: 16px;
+    line-height: 1.6;
+    padding-top: 70px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo, nav .logo {
+    height: 60px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2C2C2C;
+}
+
+.logo img { height: 100%; width: auto; }
+
+nav .menu-toggle { display: block; cursor: pointer; }
+
+nav .nav-list {
+    list-style-type: none;
+    display: none;
+}
+
+nav .nav-list li { margin: 5px 0; }
+
+nav .nav-list a {
+    color: #757575;
+    padding: 5px 10px;
+}
+
+nav .btn-quote {
+    background-color: #4CAF50;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+#home {
+    color: #1e2527;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+}
+
+#home #homeLogo {
+    display: block;
+    max-width: 500px;
+    width: 100%;
+    margin: 20px auto;
+    z-index: 5;
+}
+
+#home h1 { font-size: 36px; margin-bottom: 10px; }
+
+#home p { font-size: 18px; margin-bottom: 20px; }
+
+#home .btn-hero {
+    display: inline-block;
+    background-color: #4CAF50;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+#services { padding: 40px 0; }
+
+.service-card {
+    margin: 20px 0;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img, .service-card h3 {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.service-card h3 { margin-top: 10px; font-size: 24px; }
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h1 { font-size: 48px; }
+
+h2 { font-size: 36px; }
+
+h3 { font-size: 28px; }
+
+.menu-toggle { cursor: pointer; }
+
+.menu-toggle img { height: 24px; width: auto; }
+
+footer {
+    background-color: #2C2C2C;
+    color: #B0B0B0;
+    padding: 40px 10px;
+    border-top: 1px solid #444;
+    text-align: center;
+}
+
+footer h3 { font-size: 20px; margin-bottom: 15px; }
+
+footer a { color: #B0B0B0; margin-right: 10px; }
+
+footer a:hover { text-decoration: underline; }
+
+main {
+    align-items: center; /* Center children horizontally */
+    background-color: #FFFFFF;
+}
+
+/* Common styles for all sections except #home */
+section:not(#home) {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+}
+
+/* Common styles for children elements of all sections except #home */
+section:not(#home) > * {
+    text-align: center;
+    max-width: 80%;
+}
+
+section#about img {
+    width: 400px;
+}
+
+nav .nav-list.active {
+    display: block;
+}
+
+section p {
+    font-size: 22px;
+    color: #2C2C2C;
+    line-height: 1.8;
+    text-align: center;
+    padding: 20px;
+    margin: 25px 0;
+    position: relative;
+    font-style: italic;
+    border-radius: 5px;
+    text-shadow: 
+        4px 4px 25px rgba(255, 255, 255, 0.7), 
+        -4px -4px 25px rgba(255, 255, 255, 0.7), 
+        4px -4px 25px rgba(255, 255, 255, 0.7), 
+        -4px 4px 25px rgba(255, 255, 255, 0.7);
+}
+
+#backgroundGif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(5px);
+} 
+
+@media screen and (min-width: 769px) {
+    nav { position: static; }
+    body { padding-top: 0; }
+    nav .menu-toggle { display: none; }
+    nav .nav-list { display: flex; }
+    nav .nav-list li { margin: 0; }
+    #services .service-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #services .service-card img, 
+    #services .service-card h3, 
+    #services .service-card p { width: 45%; }
+    footer .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
